@@ -1,36 +1,40 @@
-import SettingsIcon from '@mui/icons-material/Settings';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Avatar } from "@mui/material";
+import { FiChevronDown, FiSettings } from "react-icons/fi";
+import { PiBellLight } from "react-icons/pi";
+
 export default function Navbar() {
   return (
-    <main className="flex p-3 bg-black justify-between">
-      <div>
-        <h2 className='text-white font-semibold'>
-            Hello Fazil,                
-        </h2>
-        <p className=' text-xs text-slate-400'>20 Aug, 2023</p>
+    <header className="flex justify-between px-4  py-3">
+      {/* left side of navbar */}
+      <div className="flex-row ">
+        <div className="font-medium text-white">Hello Fazil,</div>
+        <div className="text-xs font-medium text-gray-500">20 Aug 2023</div>
       </div>
-      <div className='flex'>
-            <div className='px-3'>
-                <SettingsIcon className='text-white' />
-            </div>
-            <div className='px-3'>
-                <NotificationsIcon className='text-white' />
-            </div>
-            <div className='flex'>
-                <div>
-                    <h2 className='text-white font-semibold'>
-                        Esther Howard
-                    </h2>                     
-                    <p className='text-white text-xs text-slate-400'>
-                        williejennlngs@test.com 
-                    </p>
-                </div>
-                <KeyboardArrowDownIcon className='text-white w-auto' />
 
-
+      {/* right of navbar */}
+      <div className="flex gap-4">
+        <div className="flex place-items-center gap-4 border-gray-700 border-r my-3 pr-3">
+          <FiSettings size={16} color="grey" />
+          <PiBellLight size={18} color="grey" />
+        </div>
+        <div className="flex gap-4 place-items-center">
+          <Avatar
+            alt="Remy Sharp"
+            src="https://e0.pxfuel.com/wallpapers/813/924/desktop-wallpaper-cute-for-girls-anime-girl-avatar.jpg"
+          />
+          <div>
+            <div className="font-semibold text-sm text-white">
+              Esther Howard
             </div>
+            <div className="text-xs text-gray-500">
+              willie.jenning@example.com
+            </div>
+          </div>
+        </div>
+        <div className="grid place-items-center ">
+          <FiChevronDown color="gray"/>
+        </div>
       </div>
-    </main>
+    </header>
   )
 }
